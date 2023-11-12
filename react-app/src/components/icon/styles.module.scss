@@ -1,0 +1,16 @@
+@import "../../variables.scss";
+
+.icon {
+  display: block;
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: $text-color-secondary;
+  }
+
+  &-light {
+    svg {
+      fill: $text-color-primary;
+    }
+  }
+}

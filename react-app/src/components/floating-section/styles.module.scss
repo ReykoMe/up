@@ -1,0 +1,35 @@
+@import "../../variables.scss";
+
+.root {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  background: red;
+  left: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.tail {
+  position: absolute;
+  background-color: $bgcolor-primary;
+  top: -0.5rem;
+  left: 0;
+  transform: rotate(45deg);
+  width: 30px;
+  height: 30px;
+  transition-duration: 200ms;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-color: $bgcolor-primary;
+  height: inherit;
+  box-sizing: border-box;
+  z-index: 2;
+}

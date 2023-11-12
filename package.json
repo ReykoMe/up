@@ -1,0 +1,20 @@
+{
+  "name": "upost",
+  "version": "1.0.0",
+  "description": "React app with angular directives using",
+  "main": "index.js",
+  "scripts": {
+    "dev:react": "npm run bootstrap && cd react-app && npm run dev",
+    "dev:angular": "cd angular-app && npm start",
+    "bootstrap": "npm run build:angular && node dev-scripts/pack-angular-dist.js",
+    "build:angular": "cd angular-app && npm run build",
+    "install:deps": "npm i && cd ./react-app && npm i && cd ../angular-app && npm i",
+    "init:dev": "npm i -g @angular/cli && npm run install:deps",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ReykoMe",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.9.0"
+  }
+}

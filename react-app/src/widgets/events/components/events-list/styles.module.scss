@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  justify-content: center;
+  position: relative;
+  @media screen and (max-width: 400px) {
+    gap: 0.6rem;
+  }
+}

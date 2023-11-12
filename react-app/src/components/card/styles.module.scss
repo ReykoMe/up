@@ -1,0 +1,18 @@
+.eventCard {
+  position: relative;
+  display: flex;
+  max-width: 33.2rem;
+  height: 22.1rem;
+  width: 100%;
+  overflow: hidden;
+
+  cursor: pointer;
+  & img {
+    transition-duration: 300ms;
+    position: relative;
+    width: 100%;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
