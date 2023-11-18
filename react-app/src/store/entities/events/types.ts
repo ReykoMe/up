@@ -8,7 +8,6 @@ type State = {
   list: EventItem[] | null;
   genres: ClassificationItem[];
   foundEvents: EventItem[] | null;
-  searchValue: string; //FIXME
   selectedGenre: string;
 };
 
