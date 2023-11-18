@@ -6,6 +6,9 @@ import { GenresMenu } from "./components/genres-menu";
 import styles from "./styles.module.scss";
 import { useSearchEvents } from "@widgets/events/hooks/use-search-events.ts";
 
+// moved from props for prevent extra re-renders of input
+const IconComponent = <Icon variant="search" />;
+
 export const EventsHeader: React.FC = () => {
   const search = useSearchEvents();
 
@@ -19,7 +22,7 @@ export const EventsHeader: React.FC = () => {
             value={search.value}
             onChange={search.onChange}
             placeholder="Search for events"
-            startIcon={<Icon variant="search" />}
+            startIcon={IconComponent}
           />
         </div>
       </div>

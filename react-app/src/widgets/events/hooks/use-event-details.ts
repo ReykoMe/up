@@ -44,15 +44,16 @@ export const useEventDetails = (): ReturnType => {
     setDetailsSectionAnchor(e.currentTarget);
   };
 
-  const handleChangeHeight: ReturnType["onChangeHeight"] = (newHeight) => {
-    setDetailsSectionHeight(newHeight);
-  };
+  const handleChangeHeight: ReturnType["onChangeHeight"] = useCallback(
+    (newHeight) => {
+      setDetailsSectionHeight(newHeight);
+    },
+    []
+  );
 
   useEffect(() => {
     if (selectedEventId) {
       dispatch(getEventDetailsById(selectedEventId));
-    } else {
-      dispatch(clearEventDetails());
     }
   }, [selectedEventId]);
 
