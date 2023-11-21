@@ -2,8 +2,9 @@ import { EmptyPage } from "@widgets/empty-page";
 import styles from "./styles.module.scss";
 import React, { useLayoutEffect, useRef } from "react";
 import { CircleProgress } from "@components/circle-progress";
+import { WithDataTestId } from "@root/src/utils/util-types";
 
-export const FullPagePreloader: React.FC = () => {
+export const FullPagePreloader: React.FC<WithDataTestId> = (props) => {
   const rootRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -18,7 +19,7 @@ export const FullPagePreloader: React.FC = () => {
   }, [rootRef.current]);
 
   return (
-    <div className={styles.root} ref={rootRef}>
+    <div className={styles.root} ref={rootRef} data-testid={props.dataTestId}>
       <EmptyPage>
         <CircleProgress />
       </EmptyPage>

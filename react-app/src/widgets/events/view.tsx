@@ -9,6 +9,7 @@ import { EmptyPage } from "@widgets/empty-page";
 import { FullPagePreloader } from "@widgets/full-page-preloader";
 import { useEventDetails } from "@widgets/events/hooks/use-event-details.ts";
 import { useEvents } from "@widgets/events/hooks/use-events.ts";
+import { TestIdEvents } from "./constants";
 
 export const Events: React.FC = () => {
   const events = useEvents();
@@ -23,8 +24,10 @@ export const Events: React.FC = () => {
   };
 
   return (
-    <main className={styles.root}>
-      {events.isFetching && <FullPagePreloader />}
+    <main className={styles.root} data-testid={TestIdEvents.root}>
+      {events.isFetching && (
+        <FullPagePreloader dataTestId={TestIdEvents.fullPagePreloader} />
+      )}
       {events.isEmpty && <EmptyPage>Events not found</EmptyPage>}
       <EventsList
         onClickEventCard={handleClickEventItem}
@@ -36,6 +39,7 @@ export const Events: React.FC = () => {
         anchorEl={eventInfo.anchorEl}
         open={eventInfo.isOpen}
         onChangeHeight={eventInfo.onChangeHeight}
+        dataTestId={TestIdEvents.eventInfoFloatingSection}
       >
         {eventInfo.isOpen && (
           <EventDetails {...eventInfo.details} onClose={eventInfo.onClose} />

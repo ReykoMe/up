@@ -5,11 +5,11 @@ import { normalizeEventDetails } from "@widgets/events/helpers/normalize-event-d
 import { clearEventDetails } from "@store/entities/events/slice.ts";
 import { getEventDetailsById } from "@store/entities/events/thunks.ts";
 
-export type ReturnType = {
+type ReturnType = {
   anchorEl: HTMLElement | null;
   isOpen: boolean;
   open: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-  details: EventDetailsProps;
+  details: Omit<EventDetailsProps, "onClose">;
   onClose: VoidFunction;
   height: number;
   onChangeHeight: (newHeight: number) => void;

@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { EventsListProps } from ".";
 import React, { MouseEventHandler } from "react";
 import { EventsListItem } from "./list-item";
+import { TestIdEvents } from "../../constants";
 
 export const EventsList: React.FC<EventsListProps> = (props) => {
   const handleClickEventCard =
@@ -19,6 +20,7 @@ export const EventsList: React.FC<EventsListProps> = (props) => {
     >
       {props.items?.map((el) => (
         <EventsListItem
+          dataTestId={TestIdEvents.eventItem}
           key={el.id}
           isExpanded={el.id === props.selectedItemId}
           expandSize={props.descriptionExpansionSize}
