@@ -1,18 +1,21 @@
 import styles from "./styles.module.scss";
-import React from "react";
+import React, { useCallback } from "react";
 
 import { MainGenresProps } from "./types";
 import { ALL_GENRES_ID } from "@store/entities/events/constants.ts";
 import { Link } from "@components/link";
 
-export const MainGenres: React.FC<MainGenresProps> = (props) => {
-  const handleClickLink = (genreId: string) => () => {
-    !props.isLinksDisabled && props.onClickLink(genreId);
-  };
+export const MainGenres: React.FC<MainGenresProps> = React.memo((props) => {
+  const handleClickLink = useCallback(
+    (genreId: string) => () => {
+      !props.isLinksDisabled && props.onClickLink(genreId);
+    },
+    [props.isLinksDisabled]
+  );
 
-  const handleClickMore = () => {
+  const handleClickMore = useCallback(() => {
     !props.isLinksDisabled && props.onClickMore();
-  };
+  }, [props.isLinksDisabled]);
 
   return (
     <div className={styles.linksSection}>
@@ -38,4 +41,4 @@ export const MainGenres: React.FC<MainGenresProps> = (props) => {
       </Link>
     </div>
   );
-};
+});

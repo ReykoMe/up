@@ -4,6 +4,8 @@
   "description": "React app with angular directives using",
   "main": "index.js",
   "scripts": {
+    "build": "npm run bootstrap && cd react-app && npm run build",
+    "serve:dist": "npm run build && node dev-scripts/serve-dist.js",
     "dev:react": "npm run bootstrap && cd react-app && npm run dev",
     "dev:angular": "cd angular-app && npm start",
     "bootstrap": "npm run build:angular && node dev-scripts/pack-angular-dist.js",
@@ -16,5 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.9.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }

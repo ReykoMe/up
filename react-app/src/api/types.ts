@@ -30,7 +30,7 @@ export type ApiResponse<T> = ApiPagination &
 export type NestedClassificationItem = {
   primary: boolean;
   family: boolean;
-} & Record<string, Pick<ClassificationItem, "id" | "name">>;
+} & Pick<ClassificationItem, "id" | "name">;
 
 export type ImageItem = {
   ratio: string;

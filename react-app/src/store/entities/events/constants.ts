@@ -17,7 +17,6 @@ export const initialState: EventState = {
   eventDetails: null,
   list: null,
   genres: [],
-  searchValue: "",
-  foundEvents: [],
+  foundEvents: null,
   selectedGenre: ALL_GENRES_ID,
 };

@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { setSelectedEventId } from "@store/entities/events/slice.ts";
 import { EventItem } from "@api/entities/events/types.ts";
 
-export type ReturnType = {
+type ReturnType = {
   data: EventItem[];
   isFetching: boolean;
   isEmpty: boolean;
